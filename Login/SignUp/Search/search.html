@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="s003">
+      <form>
+	  <h1>Search for your favorite product here</h1>
+        <div class="inner-form">
+          <div class="input-field second-wrap">
+            <input id="myInput" type="text" placeholder="Enter Keywords" onkeyup="myFunction()" />
+          </div>
+          <div class="input-field third-wrap">
+          </div>
+        </div>
+      </form>
+	  		  		<ul id="myUL">
+					<h1>Available Items</h1>
+  <li><a href="../../../product-detail1.html">Herschel supply  co Black top</a></li>
+  <li><a href="../../../product-detail2.html">Denim Jacket Blue</a></li>
+  <li><a href="../../../product-detail3.html">Coach slim easton black</a></li>
+  <li><a href="../../../product-detail4.html">Frayed denim shorts</a></li>
+  <li><a href="../../../product-detail5.html">Herschel supply co 251 Womens Maroon Top</a></li>
+  <li><a href="../../../product-detail6.html">Denim Jacket blue Exclusive</a></li>
+  <li><a href="../../../product-detail7.html">Herschel suplly co 251 Pink Top</a></li>
+  <li><a href="../../../product-detail8.html">Nixon Watch</a></li>
+  <li><a href="../../../product-detail9.html">White Formal Shirt</a></li>
+  <li><a href="../../../product-detail10.html">Frayed White Tunic</a></li>
+  <li><a href="../../../product-detail11.html">Exclusive Black Top</a></li>
+   <li><a href="../../../product-detail12.html">White Exclusive FADLO Top</a></li>
+</ul>
+    </div>
+    <script src="js/extention/choices.js"></script>
+    <script>
+      const choices = new Choices('[data-trigger]',
+      {
+        searchEnabled: false,
+        itemSelectText: '',
+      });
+
+    </script>
+	<script>
+function myFunction() {
+	//Kachra
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName('li');
+
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+  </body>
+</html>
