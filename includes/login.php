@@ -1,9 +1,12 @@
 <?php
+session_start();
+if(isset($_SESSION['loggedid'])){
+	header("location: http://localhost/salon/includes/welcome.php");
+}
+else{
 require_once "config.php";
 $username = trim($_POST['username']);
 $password = trim($_POST['password']);
-
-// Connection on Object Oriented PHP
 $sql = "SELECT * from users where username = ? LIMIT 1 ";
 $stmt = mysqli_stmt_init($conn);
 if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -18,10 +21,11 @@ if(!mysqli_stmt_prepare($stmt,$sql)){
             echo "the password is wrong";
             exit();
         }else if($pwdcheck == true){
-            session_start();
             $_SESSION['username'] = $row['username'];
             $_SESSION['loggedid'] = true;
             echo "Logged in sucessfully";
+            header("Location: http://localhost/salon/includes/welcome.php");
+            exit();
         }
         else{
             echo "The password is wrong";
@@ -31,4 +35,5 @@ if(!mysqli_stmt_prepare($stmt,$sql)){
     }
 }
 mysqli_close($conn);
+}
 ?>
