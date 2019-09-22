@@ -4,13 +4,13 @@
     <title>10 SCISSORS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
-    
+
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
 
-    
+
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
@@ -37,19 +37,36 @@
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="services.html" class="nav-link">Services &amp; Pricing</a></li>
-	          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-			  <li class="nav-item"><a href="Login/login.html" class="nav-link">Login/Signup</a></li>
-			  <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	        </ul>
+			<?php
+				session_start();
+				if(isset($_SESSION['loggedid'])){
+					echo '<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+					<li class="nav-item"><a href="services.html" class="nav-link">Services &amp; Pricing</a></li>
+					<li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/includes/logout.php" class="nav-link">Logout</a></li>
+					<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+					<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+				  </ul>';
+				}else{
+					echo '<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+					<li class="nav-item"><a href="services.html" class="nav-link">Services &amp; Pricing</a></li>
+					<li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+					<li class="nav-item"><a href="Login/login.html" class="nav-link">Login</a></li>
+					<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+					<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+				  </ul>';
+				}  
+			 
+			 ?>
+	        
 	      </div>
 	    </div>
 	  </nav>
-    
+
     <div class="hero-wrap js-fullheight" style="background-image: url('images/home.png');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
@@ -57,7 +74,7 @@
           <div class="col-md-6 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
           	<p class="mb-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">We provide the best haircuts you will ever find across Thane.</p>
             <h1 class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Visit someday for some of the best trending haircuts you can ever get.</h1>
-            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="appointment.html" class="btn btn-primary px-4 py-3">Book an Appointment</a></p>
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#navigate-here" class="btn btn-primary px-4 py-3">Book an Appointment</a></p>
           </div>
         </div>
       </div>
@@ -71,7 +88,7 @@
 	    				<div class="col-md-4 d-flex ftco-animate">
 	    					<div class="icon"><span class="icon-phone"></span></div>
 	    					<div class="text">
-	    						<h3>098927 84870</h3>       
+	    						<h3>098927 84870</h3>
 	    					</div>
 	    				</div>
 	    				<div class="col-md-4 d-flex ftco-animate">
@@ -111,7 +128,7 @@
     		<div class="row justify-content-center">
     			<div class="col-md-8 text-center ftco-animate">
     			<p>Scisors salon is best salon you can ever find across Thane.
-    				We provide the best you can ever find in the whole area. From trending Haircuts to self designed custom haircut. We provide all things you need. Book an appointment now to enroll and get some exclusive deals on trending haircuts.
+    				We provide the best you can ever find in the whole area. From trending Haircuts to self designed custom haircut. We provide all things you need. appointment now to enroll and get some exclusive deals on trending haircuts.
     			</p>
     			</div>
     		</div>
@@ -124,7 +141,6 @@
           <div class="col-md-7 heading-section ftco-animate text-center">
             <h2 class="mb-4">Our Services</h2>
             <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
-        
           </div>
         </div>
     		<div class="row">
@@ -137,7 +153,7 @@
                 <h3 class="heading">Haircuts &amp; Styling</h3>
                 <p>For us the working of hair is architecture with a human element.</p>
               </div>
-            </div>      
+            </div>
           </div>
           <div class="col-md-3 ftco-animate">
             <div class="media d-block text-center block-6 services">
@@ -148,7 +164,7 @@
                 <h3 class="heading">Beard Treatment</h3>
                 <p>A decent beard has long been the number one must-have fashion item for any fugitive from justice</p>
               </div>
-            </div>      
+            </div>
           </div>
           <div class="col-md-3 ftco-animate">
             <div class="media d-block text-center block-6 services">
@@ -157,7 +173,7 @@
                 <h3 class="heading">Coloring Services</h3>
                 <p>Hair color is the easiest way to change your appearance, but a bad dye job might draw more attention to you.</p>
               </div>
-            </div>    
+            </div>
           </div>
           <div class="col-md-3 ftco-animate">
             <div class="media d-block text-center block-6 services">
@@ -166,7 +182,7 @@
                 <h3 class="heading">Beard Waxing</h3>
                 <p> Hair that grows back in after waxing may be lighter and less noticeable. </p>
               </div>
-            </div>    
+            </div>
           </div>
         </div>
     	</div>
@@ -214,7 +230,7 @@
 							</div>
 						</div>
 					</div>
-	
+
 					<div class="col-md-4 d-flex ftco-animate">
 						<div class="services-wrap d-flex">
 							<a href="#" class="img order-md-last" style="background-image: url(images/work-4.jpg);"></a>
@@ -231,7 +247,7 @@
 								<h3>Hair Style for Womens </h3>
 								<p>Ready to finally find your ideal haircut? This is your ultimate resource to get the hottest hairstyles and haircuts in 2019.
 									</p>
-								
+
 							</div>
 						</div>
 					</div>
@@ -241,7 +257,7 @@
 							<div class="text p-4">
 								<h3>Traditional Haircuts Mens </h3>
 								<p>Many of these types of haircuts for men are classic looks while others are newer trends.</p>
-								
+
 							</div>
 						</div>
 					</div>
@@ -345,7 +361,7 @@
 						<h3>Save up to 25% Off</h3>
 						<h2 class="mb-4">All Services Discount</h2>
 						<p class="mb-4">Enjoy a big surprise now on 10scissors.com to buy all kinds of discount hairpiece hairstyles 2019! </p>
-						<p><a href="appointment.html" class="btn btn-primary px-4 py-3">Appointment</a></p>
+						<p><a href="#navigate-here" class="btn btn-primary px-4 py-3">Appointment</a></p>
 					</div>
 				</div>
 			</div>
@@ -569,7 +585,7 @@
         <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
             <h2 class="mb-4">Recent from blog</h2>
-            
+
           </div>
         </div>
         <div class="row d-flex">
@@ -623,14 +639,14 @@
       </div>
     </section>
 
-		
-		<section class="ftco-appointment">
+
+		<section class="ftco-appointment" id="navigate-here">
 			<div class="overlay"></div>
     	<div class="container-wrap">
     		<div class="row no-gutters d-md-flex align-items-center">
 	    		<div class="col-md-6 appointment ftco-animate">
 	    			<h3 class="mb-3">Appointments</h3>
-	    			<form action="#" class="appointment-form">
+	    			<form action="http://localhost/salon/includes/appointment.php" class="appointment-form">
 	    				<div class="d-md-flex">
 		    				<div class="form-group">
 		    					<input type="text" class="form-control" placeholder="First Name">
@@ -660,10 +676,10 @@
 	              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
 	            </div>
 	            <div class="form-group">
-	              <input type="submit" value="Appointment" class="btn btn-primary py-3 px-4">
+	              <input type="submit" value="Appointment" name="set-button" class="btn btn-primary py-3 px-4">
 	            </div>
 	    			</form>
-	    		</div>    			
+	    		</div>
     		</div>
     	</div>
     </section>
@@ -734,12 +750,12 @@
           </div>
         </div>
         <div class="row">
-          
+
         </div>
       </div>
     </footer>
-    
-  
+
+
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
@@ -762,6 +778,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-    
+
   </body>
 </html>

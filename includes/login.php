@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['loggedid'])){
-	header("location: http://localhost/salon/includes/welcome.php");
+	header("location: http://localhost/salon");
 }
 else{
 require_once "config.php";
@@ -18,13 +18,14 @@ if(!mysqli_stmt_prepare($stmt,$sql)){
     if($row = mysqli_fetch_assoc($result)){
         $pwdcheck = password_verify($password, $row['password']);
         if($pwdcheck == false){
-            echo "the password is wrong";
+            echo "<script>
+				alert('The password is wrong');
+				window.location.href='http://localhost/salon/Login/login.html';	</script>";
             exit();
         }else if($pwdcheck == true){
             $_SESSION['username'] = $row['username'];
             $_SESSION['loggedid'] = true;
-            echo "Logged in sucessfully";
-            header("Location: http://localhost/salon/includes/welcome.php");
+            header('Location: http://localhost/salon');
             exit();
         }
         else{
