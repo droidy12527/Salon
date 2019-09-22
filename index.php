@@ -639,6 +639,7 @@
       </div>
     </section>
 
+<<<<<<< HEAD:index.php
 
 		<section class="ftco-appointment" id="navigate-here">
 			<div class="overlay"></div>
@@ -683,6 +684,10 @@
     		</div>
     	</div>
     </section>
+=======
+		
+		
+>>>>>>> 8d4e2705bb3962a4528620d083a07ccf6288d804:index.html
 
     <footer class="ftco-footer ftco-section img">
     	<div class="overlay"></div>
