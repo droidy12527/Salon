@@ -10,7 +10,7 @@ $password = trim($_POST['password']);
 $sql = "SELECT * from users where username = ? LIMIT 1 ";
 $stmt = mysqli_stmt_init($conn);
 if(!mysqli_stmt_prepare($stmt,$sql)){
-    echo "There was error processing";
+    echo "The error was about fetching";
 }else{
     mysqli_stmt_bind_param($stmt,"s", $username);
     mysqli_stmt_execute($stmt);
