@@ -7,7 +7,7 @@ require_once 'config.php';
       alert("The mail has been already sent from your account please check back later");
       </script>';
     }else{
-    //$message = $_POST[''];
+    $email = $_SESSION['email-id'];
     //send email using smtp protocol and php mailer
     require('composer/vendor/phpmailer/phpmailer/src/PHPMailer.php');
     require('composer/vendor/phpmailer/phpmailer/src/SMTP.php');
@@ -20,7 +20,7 @@ require_once 'config.php';
     $mail->SMTPDebug = 1; 
     $mail->Port = 465 ; 
 
-     $mail->SMTPSecure = 'ssl';  
+    $mail->SMTPSecure = 'ssl';  
     $mail->SMTPAuth = true; 
     $mail->IsHTML(true);
 
@@ -29,19 +29,21 @@ require_once 'config.php';
     $mail->Password = "xdahackeranddeveloper";
 
     
-    $mail->SetFrom("gundiaramasu@gmail.com");
-    $mail->AddAddress("gundiaramasu@gmail.com");
+    $mail->SetFrom("hackerbadshah1010@gmail.com");
+    $mail->AddAddress($email);
     $mail->Subject = "Your appointment has been booked sucessfully";
-    $mail->Body = "Your order id is ";
+    $mail->Body = "Your appointment id is ";
 
 
      if(!$mail->Send()) {
-        echo "Mailer Error: " . $mail->ErrorInfo;
+        echo '<script>
+        alert("There was problem connecting to the internet");
+        </script>';
      } else {
         $_SESSION['mail-sent'] = true;
         echo "<script>
           alert('Please check your email. Your appointment has been sucessfully booked');
-          window.location.href='http://localhost/salon/index.php?set-button=Appointment#navigate-here';
+          window.location.href='http://localhost/salon/appointment.php';
         </script>";
      }
     }
@@ -50,7 +52,7 @@ require_once 'config.php';
   }else{
     echo "<script>
     alert('Please Login to send us an Appointment Notification.');
-    window.location.href='http://localhost/salon/index.php?set-button=Appointment#navigate-here';
+    window.location.href='http://localhost/salon/appointment.php';
 </script>";
   }
 ?>

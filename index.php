@@ -41,7 +41,7 @@
 				session_start();
 				if(isset($_SESSION['loggedid'])){
 					echo '<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+					<li class="nav-item active"><a href="http://localhost/salon/" class="nav-link">Home</a></li>
 					<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
 					<li class="nav-item"><a href="services.html" class="nav-link">Services &amp; Pricing</a></li>
 					<li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
@@ -74,7 +74,7 @@
           <div class="col-md-6 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
           	<p class="mb-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">We provide the best haircuts you will ever find across Thane.</p>
             <h1 class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Visit someday for some of the best trending haircuts you can ever get.</h1>
-            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#navigate-here" class="btn btn-primary px-4 py-3">Book an Appointment</a></p>
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="http://localhost/salon/appointment.php" class="btn btn-primary px-4 py-3">Book an Appointment</a></p>
           </div>
         </div>
       </div>
@@ -361,7 +361,7 @@
 						<h3>Save up to 25% Off</h3>
 						<h2 class="mb-4">All Services Discount</h2>
 						<p class="mb-4">Enjoy a big surprise now on 10scissors.com to buy all kinds of discount hairpiece hairstyles 2019! </p>
-						<p><a href="#navigate-here" class="btn btn-primary px-4 py-3">Appointment</a></p>
+						<p><a href="http://localhost/salon/appointment.php" class="btn btn-primary px-4 py-3">Appointment</a></p>
 					</div>
 				</div>
 			</div>
@@ -638,57 +638,6 @@
         </div>
       </div>
     </section>
-
-<<<<<<< HEAD:index.php
-
-		<section class="ftco-appointment" id="navigate-here">
-			<div class="overlay"></div>
-    	<div class="container-wrap">
-    		<div class="row no-gutters d-md-flex align-items-center">
-	    		<div class="col-md-6 appointment ftco-animate">
-	    			<h3 class="mb-3">Appointments</h3>
-	    			<form action="http://localhost/salon/includes/appointment.php" class="appointment-form">
-	    				<div class="d-md-flex">
-		    				<div class="form-group">
-		    					<input type="text" class="form-control" placeholder="First Name">
-		    				</div>
-		    				<div class="form-group ml-md-4">
-		    					<input type="text" class="form-control" placeholder="Last Name">
-		    				</div>
-	    				</div>
-	    				<div class="d-md-flex">
-		    				<div class="form-group">
-		    					<div class="input-wrap">
-		            		<div class="icon"><span class="ion-md-calendar"></span></div>
-		            		<input type="text" id="appointment_date" class="form-control" placeholder="Date">
-	            		</div>
-		    				</div>
-		    				<div class="form-group ml-md-4">
-		    					<div class="input-wrap">
-		            		<div class="icon"><span class="ion-ios-clock"></span></div>
-		            		<input type="text" id="appointment_time" class="form-control" placeholder="Time">
-	            		</div>
-		    				</div>
-		    				<div class="form-group ml-md-4">
-		    					<input type="text" class="form-control" placeholder="Phone">
-		    				</div>
-	    				</div>
-	    				<div class="form-group">
-	              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
-	            </div>
-	            <div class="form-group">
-	              <input type="submit" value="Appointment" name="set-button" class="btn btn-primary py-3 px-4">
-	            </div>
-	    			</form>
-	    		</div>
-    		</div>
-    	</div>
-    </section>
-=======
-		
-		
->>>>>>> 8d4e2705bb3962a4528620d083a07ccf6288d804:index.html
-
     <footer class="ftco-footer ftco-section img">
     	<div class="overlay"></div>
       <div class="container">

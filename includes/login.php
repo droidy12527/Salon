@@ -24,6 +24,7 @@ if(!mysqli_stmt_prepare($stmt,$sql)){
             exit();
         }else if($pwdcheck == true){
             $_SESSION['username'] = $row['username'];
+            $_SESSION['email-id'] =  $row['email'];
             $_SESSION['loggedid'] = true;
             header('Location: http://localhost/salon');
             exit();
