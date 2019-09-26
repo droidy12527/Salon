@@ -1,4 +1,4 @@
-<html lang="en">
+ <html lang="en">
     <head>
             <title>Appointments - 10 Scissors</title>
             <meta charset="utf-8">
@@ -51,7 +51,7 @@
                                 </ul>';
                               }else{
                                 echo '<ul class="navbar-nav ml-auto">
-                                <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+                                <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
                                 <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                                 <li class="nav-item"><a href="services.html" class="nav-link">Services &amp; Pricing</a></li>
                                 <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
@@ -75,31 +75,31 @@
 	    			<form action="http://localhost/salon/includes/appointment.php" class="appointment-form">
 	    				<div class="d-md-flex">
 		    				<div class="form-group">
-		    					<input type="text" class="form-control" placeholder="First Name">
+		    					<input type="text" class="form-control" placeholder="First Name" name="first-name">
 		    				</div>
 		    				<div class="form-group ml-md-4">
-		    					<input type="text" class="form-control" placeholder="Last Name">
+		    					<input type="text" class="form-control" placeholder="Last Name" name="last-name">
 		    				</div>
 	    				</div>
 	    				<div class="d-md-flex">
 		    				<div class="form-group">
 		    					<div class="input-wrap">
 		            		<div class="icon"><span class="ion-md-calendar"></span></div>
-		            		<input type="text" id="appointment_date" class="form-control" placeholder="Date">
+		            		<input type="text" id="appointment_date" class="form-control" placeholder="Date" name="date">
 	            		</div>
 		    				</div>
 		    				<div class="form-group ml-md-4">
 		    					<div class="input-wrap">
 		            		<div class="icon"><span class="ion-ios-clock"></span></div>
-		            		<input type="text" id="appointment_time" class="form-control" placeholder="Time">
+		            		<input type="text" id="appointment_time" class="form-control" placeholder="Time" name="time">
 	            		</div>
 		    				</div>
 		    				<div class="form-group ml-md-4">
-		    					<input type="text" class="form-control" placeholder="Phone">
+		    					<input type="text" class="form-control" placeholder="Phone" name="phn-no">
 		    				</div>
 	    				</div>
 	    				<div class="form-group">
-	              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
+	              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message" name="message"></textarea>
 	            </div>
 	            <div class="form-group">
 	              <input type="submit" value="Appointment" class="btn btn-primary py-3 px-4">
