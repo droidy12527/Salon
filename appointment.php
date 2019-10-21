@@ -36,32 +36,32 @@
                       </button>
             
                       <div class="collapse navbar-collapse" id="ftco-nav">
-                      
                       <?php
-                              session_start();
-                              if(isset($_SESSION['loggedid'])){
-                                echo '<ul class="navbar-nav ml-auto">
-                                <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
-                                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                                <li class="nav-item"><a href="services.html" class="nav-link">Services &amp; Pricing</a></li>
-                                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-                                <li class="nav-item"><a href="http://localhost/salon/includes/logout.php" class="nav-link">Logout</a></li>
-                                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                                </ul>';
-                              }else{
-                                echo '<ul class="navbar-nav ml-auto">
-                                <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
-                                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                                <li class="nav-item"><a href="services.html" class="nav-link">Services &amp; Pricing</a></li>
-                                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-                                <li class="nav-item"><a href="Login/login.html" class="nav-link">Login</a></li>
-                                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                                </ul>';
-                              }  
-                            
-			                        ?>
+				session_start();
+				if(isset($_SESSION['loggedid'])){
+					echo '<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a href="http://localhost/salon/index.php" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/about.php" class="nav-link">About</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/services.php" class="nav-link">Services &amp; Pricing</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/gallery.php" class="nav-link">Gallery</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/includes/logout.php" class="nav-link">Logout</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/blog.php" class="nav-link">Blog</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/contact.php" class="nav-link">Contact</a></li>
+				  </ul>';
+				}else{
+					echo '<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a href="http://localhost/salon/index.php" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/about.php" class="nav-link">About</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/services.php" class="nav-link">Services &amp; Pricing</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/gallery.php" class="nav-link">Gallery</a></li>
+					<li class="nav-item"><a href="Login/login.html" class="nav-link">Login</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/blog.php" class="nav-link">Blog</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/contact.php" class="nav-link">Contact</a></li>
+				  </ul>';
+				}  
+			 
+			 ?>
+                      
                       </div>
                     </div>
                   </nav>
@@ -72,37 +72,16 @@
     		<div class="row no-gutters d-md-flex align-items-center">
 	    		<div class="col-md-6 appointment ftco-animate">
 	    			<h3 class="mb-3">Appointments</h3>
-	    			<form action="http://localhost/salon/includes/appointment.php" class="appointment-form">
+	    			<form action="http://localhost/salon/includes/appointment.php" class="appointment-form" method="post">
 	    				<div class="d-md-flex">
 		    				<div class="form-group">
-		    					<input type="text" class="form-control" placeholder="First Name" name="first-name">
+		    					<input type="text" class="form-control" placeholder="Your appointment ID." name="first-name">
 		    				</div>
-		    				<div class="form-group ml-md-4">
-		    					<input type="text" class="form-control" placeholder="Last Name" name="last-name">
-		    				</div>
-	    				</div>
-	    				<div class="d-md-flex">
 		    				<div class="form-group">
-		    					<div class="input-wrap">
-		            		<div class="icon"><span class="ion-md-calendar"></span></div>
-		            		<input type="text" id="appointment_date" class="form-control" placeholder="Date" name="date">
-	            		</div>
-		    				</div>
-		    				<div class="form-group ml-md-4">
-		    					<div class="input-wrap">
-		            		<div class="icon"><span class="ion-ios-clock"></span></div>
-		            		<input type="text" id="appointment_time" class="form-control" placeholder="Time" name="time">
-	            		</div>
-		    				</div>
-		    				<div class="form-group ml-md-4">
-		    					<input type="text" class="form-control" placeholder="Phone" name="phn-no">
-		    				</div>
-	    				</div>
-	    				<div class="form-group">
-	              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message" name="message"></textarea>
+	              <input type="submit" value="Check Your status." class="btn btn-primary py-3 px-4">
 	            </div>
 	            <div class="form-group">
-	              <input type="submit" value="Appointment" class="btn btn-primary py-3 px-4">
+	              <input type="submit" value="Book an Appointment" class="btn btn-primary py-3 px-4" name="appointment_booking">
 	            </div>
 	    			</form>
 	    		</div>    			

@@ -1,13 +1,24 @@
 <?php
 require_once 'config.php';
   session_start();
+  if(isset($_POST['appointment_booking'])){
   if(isset($_SESSION['loggedid'])){
     if(isset($_SESSION['mail-sent'])){
       echo '<script>
       alert("The mail has been already sent from your account please check back later");
       </script>';
-    }else{
+    }
+    else{
+    $randomNumber = rand(1111111111,99999999999);
     $email = $_SESSION['email-id'];
+
+    $sql = "INSERT INTO appointment (appointment_id) VALUES ('$randomNumber')";
+
+if (mysqli_query($conn, $sql)) {
+    echo "New appointment inserted successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
     //send email using smtp protocol and php mailer
     require('composer/vendor/phpmailer/phpmailer/src/PHPMailer.php');
     require('composer/vendor/phpmailer/phpmailer/src/SMTP.php');
@@ -32,7 +43,7 @@ require_once 'config.php';
     $mail->SetFrom("hackerbadshah1010@gmail.com");
     $mail->AddAddress($email);
     $mail->Subject = "Your appointment has been booked sucessfully";
-    $mail->Body = "Your appointment id is ";
+    $mail->Body = "Your appointment id is ".$randomNumber;
 
 
      if(!$mail->Send()) {
@@ -55,4 +66,26 @@ require_once 'config.php';
     window.location.href='http://localhost/salon/appointment.php';
 </script>";
   }
+}
+
+if(isset($_POST['first-name'])){
+  $query = "select * from appointment";
+  $i = 0;
+  $found = false;
+  $result = mysqli_query($conn,$query);
+  $number = $_POST['first-name'];
+  while($row = mysqli_fetch_array($result)){
+      $i++;
+      if($number == $row[0]){
+        $found = true;
+        break;
+      }
+    }
+    if($found == true){
+      echo 'You are '.$i.' In our list';
+    }
+    else{
+      echo 'There is no such kind of appointment id registered with us';
+    }
+  } 
 ?>

@@ -7,7 +7,7 @@ $username = trim($_POST['username']);
 $password = trim($_POST['password']);
 $email = trim($_POST['email']);
 $confirm_password = trim($_POST['confirm_password']);
-//chwcking if the passwords are same or not
+//checking if the passwords are same or not
 if($password!=$confirm_password){
     echo "Both the passwords are different";
 }

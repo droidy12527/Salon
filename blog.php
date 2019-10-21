@@ -37,15 +37,31 @@
 		      </button>
 
 		      <div class="collapse navbar-collapse" id="ftco-nav">
-		        <ul class="navbar-nav ml-auto">
-		          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-		          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-		          <li class="nav-item"><a href="services.html" class="nav-link">Services &amp; Pricing</a></li>
-				  <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-				  <li class="nav-item"><a href="Login/login.html" class="nav-link">Login/Signup</a></li>
-		          <li class="nav-item active"><a href="blog.html" class="nav-link">Blog</a></li>
-		          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-		        </ul>
+			  <?php
+				session_start();
+				if(isset($_SESSION['loggedid'])){
+					echo '<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a href="http://localhost/salon/index.php" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/about.php" class="nav-link">About</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/services.php" class="nav-link">Services &amp; Pricing</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/gallery.php" class="nav-link">Gallery</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/includes/logout.php" class="nav-link">Logout</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/blog.php" class="nav-link">Blog</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/contact.php" class="nav-link">Contact</a></li>
+				  </ul>';
+				}else{
+					echo '<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a href="http://localhost/salon/index.php" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/about.php" class="nav-link">About</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/services.php" class="nav-link">Services &amp; Pricing</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/gallery.php" class="nav-link">Gallery</a></li>
+					<li class="nav-item"><a href="Login/login.html" class="nav-link">Login</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/blog.php" class="nav-link">Blog</a></li>
+					<li class="nav-item"><a href="http://localhost/salon/contact.php" class="nav-link">Contact</a></li>
+				  </ul>';
+				}  
+			 
+			 ?>
 		      </div>
 		    </div>
 		  </nav>
