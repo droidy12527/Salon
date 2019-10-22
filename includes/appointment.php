@@ -9,16 +9,7 @@ require_once 'config.php';
       </script>';
     }
     else{
-    $randomNumber = rand(1111111111,99999999999);
     $email = $_SESSION['email-id'];
-
-    $sql = "INSERT INTO appointment (appointment_id) VALUES ('$randomNumber')";
-
-if (mysqli_query($conn, $sql)) {
-    echo "New appointment inserted successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
     //send email using smtp protocol and php mailer
     require('composer/vendor/phpmailer/phpmailer/src/PHPMailer.php');
     require('composer/vendor/phpmailer/phpmailer/src/SMTP.php');
@@ -39,11 +30,13 @@ if (mysqli_query($conn, $sql)) {
     $mail->Username = "hackerbadshah1010@gmail.com";
     $mail->Password = "xdahackeranddeveloper";
 
-    
+    $randomNumber = rand();
+    $sql = "INSERT INTO appointment (appointment_id) VALUES ('$randomNumber')";
     $mail->SetFrom("hackerbadshah1010@gmail.com");
     $mail->AddAddress($email);
     $mail->Subject = "Your appointment has been booked sucessfully";
     $mail->Body = "Your appointment id is ".$randomNumber;
+    mysqli_query($conn, $sql);
 
 
      if(!$mail->Send()) {
