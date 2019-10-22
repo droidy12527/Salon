@@ -1,7 +1,11 @@
 <?php
 session_start();
 if(isset($_SESSION['loggedid'])){
-	header("location: http://localhost/salon");
+    if ($_SESSION['username'] == 'admin'){
+        header('Location: http://localhost/salon/admin_panel.php ');
+    }else{
+    header("location: http://localhost/salon");
+    }
 }
 else{
 require_once "config.php";
@@ -26,8 +30,13 @@ if(!mysqli_stmt_prepare($stmt,$sql)){
             $_SESSION['username'] = $row['username'];
             $_SESSION['email-id'] =  $row['email'];
             $_SESSION['loggedid'] = true;
+            if($row['username']=='admin'){
+                header('location: http://localhost/salon/admin_panel.php');
+                exit();
+            }else{
             header('Location: http://localhost/salon');
             exit();
+            }
         }
         else{
             echo "The password is wrong";
